@@ -15,6 +15,11 @@
 		335DED61210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED60210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift */; };
 		335DED65210BF38400E5E64A /* TextualQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED63210BF38400E5E64A /* TextualQuestionTableViewCell.swift */; };
 		335DED66210BF38400E5E64A /* TextualQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335DED64210BF38400E5E64A /* TextualQuestionTableViewCell.xib */; };
+		335DED68210BFC7700E5E64A /* TextualQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED67210BFC7700E5E64A /* TextualQuestionViewModel.swift */; };
+		335DED6A210BFF5500E5E64A /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED69210BFF5500E5E64A /* QuestionType.swift */; };
+		335DED6C210C018200E5E64A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED6B210C018200E5E64A /* Country.swift */; };
+		335DED6F210C0C8C00E5E64A /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED6E210C0C8C00E5E64A /* QuestionManager.swift */; };
+		3389BBC9210CAFBC006059FA /* Capital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBC8210CAFBC006059FA /* Capital.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		335DED60210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformsTableViewBasicSetup.swift; sourceTree = "<group>"; };
 		335DED63210BF38400E5E64A /* TextualQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextualQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		335DED64210BF38400E5E64A /* TextualQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextualQuestionTableViewCell.xib; sourceTree = "<group>"; };
+		335DED67210BFC7700E5E64A /* TextualQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextualQuestionViewModel.swift; sourceTree = "<group>"; };
+		335DED69210BFF5500E5E64A /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
+		335DED6B210C018200E5E64A /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		335DED6E210C0C8C00E5E64A /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		3389BBC8210CAFBC006059FA /* Capital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capital.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +74,7 @@
 				335DED5B210BEE2200E5E64A /* Resources */,
 				335DED58210BEDF100E5E64A /* Model */,
 				335DED5A210BEE0D00E5E64A /* View */,
-				335DED59210BEDFF00E5E64A /* ViewModel */,
+				335DED59210BEDFF00E5E64A /* QuestionManager */,
 				335DED46210BED2300E5E64A /* AppDelegate.swift */,
 				335DED52210BED2400E5E64A /* Info.plist */,
 			);
@@ -74,15 +84,18 @@
 		335DED58210BEDF100E5E64A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3389BBC7210CAF9D006059FA /* CountryInfo */,
+				335DED69210BFF5500E5E64A /* QuestionType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		335DED59210BEDFF00E5E64A /* ViewModel */ = {
+		335DED59210BEDFF00E5E64A /* QuestionManager */ = {
 			isa = PBXGroup;
 			children = (
+				335DED6E210C0C8C00E5E64A /* QuestionManager.swift */,
 			);
-			path = ViewModel;
+			path = QuestionManager;
 			sourceTree = "<group>";
 		};
 		335DED5A210BEE0D00E5E64A /* View */ = {
@@ -123,10 +136,28 @@
 		335DED62210BF33100E5E64A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				335DED63210BF38400E5E64A /* TextualQuestionTableViewCell.swift */,
-				335DED64210BF38400E5E64A /* TextualQuestionTableViewCell.xib */,
+				335DED6D210C0C4800E5E64A /* TextualQuestion */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		335DED6D210C0C4800E5E64A /* TextualQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				335DED63210BF38400E5E64A /* TextualQuestionTableViewCell.swift */,
+				335DED64210BF38400E5E64A /* TextualQuestionTableViewCell.xib */,
+				335DED67210BFC7700E5E64A /* TextualQuestionViewModel.swift */,
+			);
+			path = TextualQuestion;
+			sourceTree = "<group>";
+		};
+		3389BBC7210CAF9D006059FA /* CountryInfo */ = {
+			isa = PBXGroup;
+			children = (
+				335DED6B210C018200E5E64A /* Country.swift */,
+				3389BBC8210CAFBC006059FA /* Capital.swift */,
+			);
+			path = CountryInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +192,7 @@
 				TargetAttributes = {
 					335DED42210BED2300E5E64A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -201,7 +233,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				335DED61210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift in Sources */,
+				335DED6A210BFF5500E5E64A /* QuestionType.swift in Sources */,
 				335DED49210BED2300E5E64A /* ViewController.swift in Sources */,
+				335DED68210BFC7700E5E64A /* TextualQuestionViewModel.swift in Sources */,
+				3389BBC9210CAFBC006059FA /* Capital.swift in Sources */,
+				335DED6C210C018200E5E64A /* Country.swift in Sources */,
+				335DED6F210C0C8C00E5E64A /* QuestionManager.swift in Sources */,
 				335DED5E210BF13600E5E64A /* QuestionTableViewController.swift in Sources */,
 				335DED65210BF38400E5E64A /* TextualQuestionTableViewCell.swift in Sources */,
 				335DED47210BED2300E5E64A /* AppDelegate.swift in Sources */,
@@ -349,7 +386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "v-i-s-h-a-l.July-28";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -367,7 +404,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "v-i-s-h-a-l.July-28";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

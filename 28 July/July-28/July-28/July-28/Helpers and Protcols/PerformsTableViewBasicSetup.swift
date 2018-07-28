@@ -17,7 +17,7 @@ extension PerformsTableViewBasicSetup where Self: UITableViewController {
     
     func setupTableView() {
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
         tableView.separatorStyle = .none
         tableView.allowsSelection = false

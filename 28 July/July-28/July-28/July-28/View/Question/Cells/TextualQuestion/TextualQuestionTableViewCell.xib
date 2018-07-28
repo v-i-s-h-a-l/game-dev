@@ -19,35 +19,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="384" height="505.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQj-vp-dh1">
-                        <rect key="frame" x="32" y="64" width="320" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQj-vp-dh1">
+                        <rect key="frame" x="32" y="64" width="320" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" red="0.35889293771019426" green="1" blue="0.11229872673970631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxR-Tx-yJ8">
                         <rect key="frame" x="32" y="148.5" width="320" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.026714045765750649" green="1" blue="0.96930294982092557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="optionSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xwg-tK-LM9"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlL-c5-dxS">
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlL-c5-dxS">
                         <rect key="frame" x="32" y="210.5" width="320" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.026714045765750649" green="1" blue="0.96930294982092557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="optionSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="abE-aU-leb"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEC-Ws-eMb">
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEC-Ws-eMb">
                         <rect key="frame" x="32" y="272.5" width="320" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.02671404577" green="1" blue="0.96930294979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="optionSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dYx-xe-3ls"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vb0-qv-Dby">
+                    <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vb0-qv-Dby">
                         <rect key="frame" x="32" y="334.5" width="320" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.02671404577" green="1" blue="0.96930294979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="optionSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="khF-O0-8js"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,6 +87,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="questionLabel" destination="SQj-vp-dh1" id="z4L-Pm-rEv"/>
+                <outletCollection property="optionButtons" destination="PxR-Tx-yJ8" collectionClass="NSMutableArray" id="T1U-5k-4EJ"/>
+                <outletCollection property="optionButtons" destination="XlL-c5-dxS" collectionClass="NSMutableArray" id="mEN-gn-QCL"/>
+                <outletCollection property="optionButtons" destination="jEC-Ws-eMb" collectionClass="NSMutableArray" id="hYa-yM-ooc"/>
+                <outletCollection property="optionButtons" destination="vb0-qv-Dby" collectionClass="NSMutableArray" id="bxS-qj-O3Q"/>
+            </connections>
             <point key="canvasLocation" x="33" y="-12"/>
         </tableViewCell>
     </objects>

@@ -29,13 +29,11 @@ enum QuestionManager {
     }
     
     private static func randomCountriesWith(_ country: Country) -> [Country] {
-        var shuffledCountries = Country.allCases.shuffled()
-        if let index = shuffledCountries.index(of: country) {
-            shuffledCountries.remove(at: index)
-        }
-        
-        var randomCountries = Array(shuffledCountries[...2])
+        let otherCountries = (Country.allCases.filter { $0 != country }).shuffled()
+        let randomIndex = Int.random(in: 0..<(otherCountries.count - 3))
+        var randomCountries = Array(otherCountries[randomIndex...randomIndex + 2])
         randomCountries.append(country)
+
         return randomCountries.shuffled()
     }
 }

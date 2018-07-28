@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameplayKit
 
 class QuestionTableViewController: UITableViewController, PerformsTableViewBasicSetup {    
     
@@ -73,7 +74,11 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     }
     
     func askNextQuestion() {
-        currentCountry = Country.allCases.randomElement() ?? Country.india
+        let allCountries = Country.allCases
+        let sharedRanom = GKRandomSource.sharedRandom()
+        let randomIndex = sharedRanom.nextInt(upperBound: allCountries.count - 1)
+        currentCountry = (sharedRanom.arrayByShufflingObjects(in: allCountries) as! [Country])[randomIndex]
+        
         currentQuestionType = QuestionType.allCases.randomElement() ?? QuestionType.capitalCountry
 
         tableView.reloadSections([0], with: .fade)

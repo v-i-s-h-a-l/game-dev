@@ -11,6 +11,7 @@ import UIKit
 class InfoHeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     let animatioDuration = 0.1
     
     static func loadFromNib() -> InfoHeaderView {
@@ -34,5 +35,9 @@ class InfoHeaderView: UITableViewHeaderFooterView {
         UIView.animate(withDuration: animatioDuration, delay: animatioDuration * 4, options: [], animations: {
             self.layer.backgroundColor = UIColor.darkGray.cgColor
         }, completion: nil)
+    }
+
+    func setTime(_ time: Double) {
+        timerLabel.text = "\(time)"
     }
 }

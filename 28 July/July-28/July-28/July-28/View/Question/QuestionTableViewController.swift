@@ -29,8 +29,14 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
             ScoreManager.highScore = highScore
         }
     }
+    private var timeRemaining: Double = ScoreManager.maxTime {
+        didSet {
+            infoHeaderView.setTime(timeRemaining)
+        }
+    }
     
     private lazy var infoHeaderView: InfoHeaderView = InfoHeaderView.loadFromNib()
+    private lazy var timer: Timer = Timer.scheduledTimer(withTimeInterval: ScoreManager.stepTime, repeats: true, block: stepTimer)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,12 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         super.viewWillAppear(animated)
 
         askNextQuestion()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        timer.fire()
     }
     
     private func addInfoHeaderView() {
@@ -66,6 +78,14 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         score += isAnswerCorrect ? ScoreManager.correctAnswerScore : ScoreManager.incorrectAnswerScore
         
         askNextQuestion()
+    }
+    
+    func stepTimer(_ timer: Timer) {
+        timeRemaining -= ScoreManager.stepTime
+        if timeRemaining <= 0.0 {
+            timer.invalidate()
+            timeRemaining = 0.0
+        }
     }
     
     // MARK: - Table View -

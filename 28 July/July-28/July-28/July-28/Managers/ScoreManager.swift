@@ -9,6 +9,9 @@
 import Foundation
 
 struct ScoreManager {
+    
+    static let maxTime: Double = 10.0
+    static let stepTime: Double = 0.5
 
     static let correctAnswerScore: Int = 20
     static let incorrectAnswerScore: Int = -10

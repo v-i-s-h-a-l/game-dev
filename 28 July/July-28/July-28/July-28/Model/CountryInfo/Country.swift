@@ -35,32 +35,7 @@ enum Country: String, CaseIterable {
     // SOUTH AMERICA
     case argentina, brazil, chile, colombia, ecuador, guyana, paraguay, peru, suriname, uruguay, venezuela
 
+    // AUSTRALIA AND OCEANIA
+    case australia, fiji, kiribati, micronesia, nauru, palau, samoa, tuvalu, vanuatu
 
 }
-
-/*
- 
- Argentina      Buenos Aires
- Brazil    	    Brasilia
- Chile          Santiago
- Colombia    	Bogotá
- Ecuador        Quito
- Guyana         Georgetown
- Paraguay       Asunción
- Peru           Lima
- Suriname       Paramaribo
- Uruguay        Montevideo
- Venezuela      Caracas
- */
-
-Argentina
-Brazil
-Chile
-Colombia
-Ecuador
-Guyana
-Paraguay
-Peru
-Suriname
-Uruguay
-Venezuela

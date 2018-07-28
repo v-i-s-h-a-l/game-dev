@@ -155,6 +155,17 @@ extension Country {
         case .uruguay: return "Montevideo"
         case .venezuela: return "Caracas"
 
+        // AUSTRALIA AND OCEANIA
+        case .australia: return "Canberra"
+        case .fiji: return "Suva"
+        case .kiribati: return "Tarawa"
+        case .micronesia: return "Palikir"
+        case .nauru: return "Yaren District"
+        case .palau: return "Ngerulmud"
+        case .samoa: return "Apia"
+        case .tuvalu: return "Funafuti"
+        case .vanuatu: return "Port Vila"
+
         }
     }
 }

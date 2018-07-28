@@ -32,10 +32,10 @@ struct ScoreManager {
     }
     
     static func messageFor(score: Int) -> String {
-        if score >= highScore {
-            return "Congratulations! Your score, \(score) is now the highest score in this category. :]"
+        if score >= highScore && score != 0 {
+            return "Congratulations! Your score, \(score) is now the highest score in this category. 🎊"
         } else {
-            return "Well done! You scored \(score). Highest score in this category is \(highScore). Keep trying harder. :]"
+            return "Well done! You scored \(score) 👏. Highest score in this category is \(highScore). Keep trying harder."
         }
     }
 }

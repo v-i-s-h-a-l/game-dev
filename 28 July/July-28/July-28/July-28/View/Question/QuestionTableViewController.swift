@@ -104,7 +104,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         let goBackAction = UIAlertAction(title: "Go back", style: .destructive) { _ in
             self.dismiss(animated: true, completion: nil)
         }
-        showAlertWith(title: "Time's Up!!", message: ScoreManager.messageFor(score: score), actions: [goBackAction, restartAction])
+        showAlertWith(title: "🕛 Time's Up!!", message: ScoreManager.messageFor(score: score), actions: [goBackAction, restartAction])
     }
     
     private func reset() {

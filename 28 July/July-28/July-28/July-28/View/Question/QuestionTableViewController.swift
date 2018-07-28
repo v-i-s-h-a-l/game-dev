@@ -20,9 +20,6 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
             if score < 0 {
                 score = 0
             }
-            if score > highScore {
-                highScore = score
-            }
             infoHeaderView.setScore(score, highScore: highScore)
         }
     }
@@ -97,6 +94,9 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     func onTimeOver() {
         timer.invalidate()
         timeRemaining = 0.0
+        if score > highScore {
+            highScore = score
+        }
         // Show finished alert
         let restartAction = UIAlertAction(title: "Restart", style: .default) { _ in
             self.reset()

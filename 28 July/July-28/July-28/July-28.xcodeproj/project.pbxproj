@@ -11,6 +11,10 @@
 		335DED49210BED2300E5E64A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED48210BED2300E5E64A /* ViewController.swift */; };
 		335DED4E210BED2400E5E64A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335DED4D210BED2400E5E64A /* Assets.xcassets */; };
 		335DED51210BED2400E5E64A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335DED4F210BED2400E5E64A /* LaunchScreen.storyboard */; };
+		335DED5E210BF13600E5E64A /* QuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED5D210BF13600E5E64A /* QuestionTableViewController.swift */; };
+		335DED61210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED60210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift */; };
+		335DED65210BF38400E5E64A /* TextualQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED63210BF38400E5E64A /* TextualQuestionTableViewCell.swift */; };
+		335DED66210BF38400E5E64A /* TextualQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335DED64210BF38400E5E64A /* TextualQuestionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		335DED4D210BED2400E5E64A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		335DED50210BED2400E5E64A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		335DED52210BED2400E5E64A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		335DED5D210BF13600E5E64A /* QuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewController.swift; sourceTree = "<group>"; };
+		335DED60210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformsTableViewBasicSetup.swift; sourceTree = "<group>"; };
+		335DED63210BF38400E5E64A /* TextualQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextualQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		335DED64210BF38400E5E64A /* TextualQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextualQuestionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,7 @@
 		335DED45210BED2300E5E64A /* July-28 */ = {
 			isa = PBXGroup;
 			children = (
+				335DED5F210BF1B000E5E64A /* Helpers and Protcols */,
 				335DED5B210BEE2200E5E64A /* Resources */,
 				335DED58210BEDF100E5E64A /* Model */,
 				335DED5A210BEE0D00E5E64A /* View */,
@@ -79,6 +88,7 @@
 		335DED5A210BEE0D00E5E64A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				335DED5C210BF11100E5E64A /* Question */,
 				335DED48210BED2300E5E64A /* ViewController.swift */,
 			);
 			path = View;
@@ -91,6 +101,32 @@
 				335DED4F210BED2400E5E64A /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		335DED5C210BF11100E5E64A /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				335DED62210BF33100E5E64A /* Cells */,
+				335DED5D210BF13600E5E64A /* QuestionTableViewController.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		335DED5F210BF1B000E5E64A /* Helpers and Protcols */ = {
+			isa = PBXGroup;
+			children = (
+				335DED60210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift */,
+			);
+			path = "Helpers and Protcols";
+			sourceTree = "<group>";
+		};
+		335DED62210BF33100E5E64A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				335DED63210BF38400E5E64A /* TextualQuestionTableViewCell.swift */,
+				335DED64210BF38400E5E64A /* TextualQuestionTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				335DED51210BED2400E5E64A /* LaunchScreen.storyboard in Resources */,
+				335DED66210BF38400E5E64A /* TextualQuestionTableViewCell.xib in Resources */,
 				335DED4E210BED2400E5E64A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,7 +200,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335DED61210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift in Sources */,
 				335DED49210BED2300E5E64A /* ViewController.swift in Sources */,
+				335DED5E210BF13600E5E64A /* QuestionTableViewController.swift in Sources */,
+				335DED65210BF38400E5E64A /* TextualQuestionTableViewCell.swift in Sources */,
 				335DED47210BED2300E5E64A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

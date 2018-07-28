@@ -26,7 +26,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func infoButtonTapped(sender: Any) {
-        
+        let questionViewController = QuestionTableViewController()
+        questionViewController.modalTransitionStyle = .crossDissolve
+        present(questionViewController, animated: true, completion: nil)
     }
 }
 

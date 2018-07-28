@@ -65,6 +65,13 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         infoHeaderView.setScore(0, highScore: highScore)
     }
     
+    func stepTimer(_ timer: Timer) {
+        timeRemaining -= ScoreManager.stepTime
+        if timeRemaining <= 0.0 {
+            onTimeOver()
+        }
+    }
+    
     func askNextQuestion() {
         currentCountry = Country.allCases.randomElement() ?? Country.india
         currentQuestionType = QuestionType.allCases.randomElement() ?? QuestionType.capitalCountry
@@ -80,12 +87,25 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         askNextQuestion()
     }
     
-    func stepTimer(_ timer: Timer) {
-        timeRemaining -= ScoreManager.stepTime
-        if timeRemaining <= 0.0 {
-            timer.invalidate()
-            timeRemaining = 0.0
+    func onTimeOver() {
+        timer.invalidate()
+        timeRemaining = 0.0
+        // Show finished alert
+        let restartAction = UIAlertAction(title: "Restart", style: .default) { _ in
+            self.reset()
         }
+        let goBackAction = UIAlertAction(title: "Go back", style: .destructive) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        showAlertWith(title: "Time's Up!!", message: ScoreManager.messageFor(score: score), actions: [goBackAction, restartAction])
+    }
+    
+    private func reset() {
+        score = 0
+        timeRemaining = ScoreManager.maxTime + ScoreManager.stepTime
+        timer = Timer.scheduledTimer(withTimeInterval: ScoreManager.stepTime, repeats: true, block: stepTimer)
+        timer.fire()
+        askNextQuestion()
     }
     
     // MARK: - Table View -

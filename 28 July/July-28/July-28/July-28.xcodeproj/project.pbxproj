@@ -23,6 +23,7 @@
 		3389BBCE210CB5FA006059FA /* InfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBCD210CB5FA006059FA /* InfoHeaderView.swift */; };
 		3389BBD0210CB60E006059FA /* InfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3389BBCF210CB60E006059FA /* InfoHeaderView.xib */; };
 		3389BBD2210CC739006059FA /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD1210CC739006059FA /* ScoreManager.swift */; };
+		3389BBD4210CEE39006059FA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD3210CEE39006059FA /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3389BBCD210CB5FA006059FA /* InfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHeaderView.swift; sourceTree = "<group>"; };
 		3389BBCF210CB60E006059FA /* InfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoHeaderView.xib; sourceTree = "<group>"; };
 		3389BBD1210CC739006059FA /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		3389BBD3210CEE39006059FA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				335DED60210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift */,
+				3389BBD3210CEE39006059FA /* Alert.swift */,
 			);
 			path = "Helpers and Protcols";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				335DED6A210BFF5500E5E64A /* QuestionType.swift in Sources */,
 				335DED49210BED2300E5E64A /* ViewController.swift in Sources */,
 				335DED68210BFC7700E5E64A /* TextualQuestionViewModel.swift in Sources */,
+				3389BBD4210CEE39006059FA /* Alert.swift in Sources */,
 				3389BBC9210CAFBC006059FA /* Capital.swift in Sources */,
 				335DED6C210C018200E5E64A /* Country.swift in Sources */,
 				335DED6F210C0C8C00E5E64A /* QuestionManager.swift in Sources */,

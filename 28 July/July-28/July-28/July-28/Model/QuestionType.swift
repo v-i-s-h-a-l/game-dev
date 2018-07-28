@@ -26,13 +26,13 @@ enum QuestionType: Int {
                 "%@ is the capital of which country?",
                 "Which country's capital is %@?",
                 "%@ is the capital of:",
-                ].randomElement() ?? "%@ is the capital of which country?"
+                ].randomElement() ?? "%@ is the capital of:"
         case .countryCapital:
             return [
                 "What is the capital of %@?",
                 "Which one of the following is the capital of %@?",
                 "The capital of %@ is:",
-                ].randomElement() ?? "What is the capital of %@?"
+                ].randomElement() ?? "The capital of %@ is:"
             
         }
     }

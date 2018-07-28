@@ -10,7 +10,7 @@ import Foundation
 
 struct ScoreManager {
     
-    static let maxTime: Double = 10.0
+    static let maxTime: Double = 60.0
     static let stepTime: Double = 0.5
 
     static let correctAnswerScore: Int = 20
@@ -21,6 +21,14 @@ struct ScoreManager {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "highScore")
+        }
+    }
+    
+    static func messageFor(score: Int) -> String {
+        if score >= highScore {
+            return "Congratulations! Your score, \(score) is now the highest score. :]"
+        } else {
+            return "Well done! You scored \(score). Highest score is \(highScore). Keep trying harder. :]"
         }
     }
 }

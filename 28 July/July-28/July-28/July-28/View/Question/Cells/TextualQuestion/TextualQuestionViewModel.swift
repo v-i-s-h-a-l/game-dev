@@ -18,4 +18,5 @@ struct TextualQuestionViewModel: Question {
     var question: String
     let options: [String]
     var correctOptionIndex: Int
+    var questionFontSize: Double = 24.0
 }

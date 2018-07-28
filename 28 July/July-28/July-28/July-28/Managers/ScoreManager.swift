@@ -10,6 +10,8 @@ import UIKit
 
 struct ScoreManager {
     
+    static var selectedGameMode: GameMode = .mixed
+    
     static let maxTime: Double = 60.0
     static let stepTime: Double = 0.5
 
@@ -22,18 +24,18 @@ struct ScoreManager {
 
     static var highScore: Int {
         get {
-            return UserDefaults.standard.integer(forKey: "highScore")
+            return UserDefaults.standard.integer(forKey: "highScore-\(selectedGameMode.rawValue)")
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: "highScore")
+            UserDefaults.standard.set(newValue, forKey: "highScore-\(selectedGameMode.rawValue)")
         }
     }
     
     static func messageFor(score: Int) -> String {
         if score >= highScore {
-            return "Congratulations! Your score, \(score) is now the highest score. :]"
+            return "Congratulations! Your score, \(score) is now the highest score in this category. :]"
         } else {
-            return "Well done! You scored \(score). Highest score is \(highScore). Keep trying harder. :]"
+            return "Well done! You scored \(score). Highest score in this category is \(highScore). Keep trying harder. :]"
         }
     }
 }

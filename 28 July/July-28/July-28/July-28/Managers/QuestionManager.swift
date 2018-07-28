@@ -13,6 +13,7 @@ enum QuestionManager {
     static func textualQuestionWith(_ country: Country, questionType: QuestionType) -> TextualQuestionViewModel? {
         let question: String
         let options: [String]
+        var questionFontSize: Double = 24.0
         
         let randomCountries = randomCountriesWith(country)
         let correctOptionIndex: Int = randomCountries.index(of: country) ?? -1
@@ -24,10 +25,14 @@ enum QuestionManager {
         case .countryCapital:
             question = String(format: questionType.questionFormat, country.rawValue.capitalized)
             options = randomCountries.map { $0.capital.capitalized }
+        case .flagCountry:
+            question = String(format: questionType.questionFormat, country.flag)
+            options = randomCountries.map { $0.rawValue.capitalized }
+            questionFontSize = 84.0
         case .countryFlag:
             return nil
         }
-        return TextualQuestionViewModel(question: question, options: options, correctOptionIndex: correctOptionIndex)
+        return TextualQuestionViewModel(question: question, options: options, correctOptionIndex: correctOptionIndex, questionFontSize: questionFontSize)
     }
     
     static func countryFlagQuestionWith(_ country: Country) -> CountryFlagQuestionViewModel {

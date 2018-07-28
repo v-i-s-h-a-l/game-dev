@@ -8,14 +8,34 @@
 
 import Foundation
 
+enum GameMode: String, CaseIterable {
+    
+    case capitals
+    case flags
+    case mixed
+
+    var questionTypes: [QuestionType] {
+        switch self {
+        case .capitals:
+            return [.capitalCountry, .countryCapital]
+        case .flags:
+            return [.countryFlag, .flagCountry]
+        case .mixed:
+            return QuestionType.allCases
+        }
+    }
+}
+
 enum QuestionType: Int, CaseIterable {
+
     case capitalCountry = 0         // guess country from given capital
     case countryCapital             // guess capital from given country
     case countryFlag                // guess the flag for the given country
+    case flagCountry                // given flag, guess country
     
     var cellClassName: String {
         switch self {
-        case .capitalCountry, .countryCapital: return String(describing: TextualQuestionTableViewCell.self)
+        case .capitalCountry, .countryCapital, .flagCountry: return String(describing: TextualQuestionTableViewCell.self)
         case .countryFlag: return String(describing: CountryFlagTableViewCell.self)
         }
     }
@@ -40,6 +60,7 @@ enum QuestionType: Int, CaseIterable {
                 "Which of the following is the flag of %@?",
                 "The flag of %@ is:",
                 ].randomElement() ?? "The flag of %@ is:"
+        case .flagCountry: return "%@"
         }
     }
 }

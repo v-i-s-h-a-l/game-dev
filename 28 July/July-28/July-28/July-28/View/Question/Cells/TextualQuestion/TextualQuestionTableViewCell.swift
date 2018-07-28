@@ -12,6 +12,7 @@ class TextualQuestionTableViewCell: QuestionTableViewCell {
     
     func configureWith(viewModel: TextualQuestionViewModel) {
         questionLabel.text = viewModel.question
+        questionLabel.font = questionLabel.font.withSize(CGFloat(viewModel.questionFontSize))
         for (optionButton, option) in zip(optionButtons, viewModel.options) {
             optionButton.setTitle(option, for: .normal)
         }

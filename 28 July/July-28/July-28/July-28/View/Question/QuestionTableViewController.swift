@@ -10,7 +10,8 @@ import UIKit
 import GameplayKit
 
 class QuestionTableViewController: UITableViewController, PerformsTableViewBasicSetup {    
-    
+
+    private var selectedQuestionTypes: [QuestionType] = []
     private var currentCountry: Country = .india
     private var currentQuestion: Question!
     private var currentQuestionType: QuestionType = .capitalCountry
@@ -42,6 +43,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        selectedQuestionTypes = ScoreManager.selectedGameMode.questionTypes
         setupTableView()
         view.backgroundColor = ScoreManager.backgroundColor1
         let cellClassNames = [TextualQuestionTableViewCell.self, CountryFlagTableViewCell.self].map { String(describing: $0) }
@@ -79,7 +81,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         let randomIndex = sharedRanom.nextInt(upperBound: allCountries.count - 1)
         currentCountry = (sharedRanom.arrayByShufflingObjects(in: allCountries) as! [Country])[randomIndex]
         
-        currentQuestionType = QuestionType.allCases.randomElement() ?? QuestionType.capitalCountry
+        currentQuestionType = selectedQuestionTypes.randomElement() ?? QuestionType.capitalCountry
 
         tableView.reloadSections([0], with: .fade)
     }
@@ -142,7 +144,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch currentQuestionType {
-        case .capitalCountry, .countryCapital: return textualQuestionFor(tableView, at: indexPath)
+        case .capitalCountry, .countryCapital, .flagCountry: return textualQuestionFor(tableView, at: indexPath)
         case .countryFlag: return countryFlagQuestionCellFor(tableView, at: indexPath)
         }
     }

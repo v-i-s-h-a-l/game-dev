@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		335DED47210BED2300E5E64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED46210BED2300E5E64A /* AppDelegate.swift */; };
-		335DED49210BED2300E5E64A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED48210BED2300E5E64A /* ViewController.swift */; };
 		335DED4E210BED2400E5E64A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335DED4D210BED2400E5E64A /* Assets.xcassets */; };
 		335DED51210BED2400E5E64A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335DED4F210BED2400E5E64A /* LaunchScreen.storyboard */; };
 		335DED5E210BF13600E5E64A /* QuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED5D210BF13600E5E64A /* QuestionTableViewController.swift */; };
@@ -29,12 +28,13 @@
 		3389BBDB210D1DCB006059FA /* CountryFlagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3389BBD9210D1DCB006059FA /* CountryFlagTableViewCell.xib */; };
 		3389BBDD210D2041006059FA /* CountryFlagQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBDC210D2041006059FA /* CountryFlagQuestionViewModel.swift */; };
 		3389BBDF210D2168006059FA /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBDE210D2168006059FA /* QuestionTableViewCell.swift */; };
+		3389BBE3210D3050006059FA /* GameModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBE1210D3050006059FA /* GameModeSelectionViewController.swift */; };
+		3389BBE4210D3050006059FA /* GameModeSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3389BBE2210D3050006059FA /* GameModeSelectionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		335DED43210BED2300E5E64A /* July-28.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "July-28.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		335DED46210BED2300E5E64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		335DED48210BED2300E5E64A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		335DED4D210BED2400E5E64A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		335DED50210BED2400E5E64A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		335DED52210BED2400E5E64A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +56,8 @@
 		3389BBD9210D1DCB006059FA /* CountryFlagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryFlagTableViewCell.xib; sourceTree = "<group>"; };
 		3389BBDC210D2041006059FA /* CountryFlagQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlagQuestionViewModel.swift; sourceTree = "<group>"; };
 		3389BBDE210D2168006059FA /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		3389BBE1210D3050006059FA /* GameModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeSelectionViewController.swift; sourceTree = "<group>"; };
+		3389BBE2210D3050006059FA /* GameModeSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameModeSelectionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +122,8 @@
 		335DED5A210BEE0D00E5E64A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3389BBE0210D3014006059FA /* GameMode */,
 				335DED5C210BF11100E5E64A /* Question */,
-				335DED48210BED2300E5E64A /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +205,15 @@
 			path = CountryFlag;
 			sourceTree = "<group>";
 		};
+		3389BBE0210D3014006059FA /* GameMode */ = {
+			isa = PBXGroup;
+			children = (
+				3389BBE1210D3050006059FA /* GameModeSelectionViewController.swift */,
+				3389BBE2210D3050006059FA /* GameModeSelectionViewController.xib */,
+			);
+			path = GameMode;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3389BBE4210D3050006059FA /* GameModeSelectionViewController.xib in Resources */,
 				335DED51210BED2400E5E64A /* LaunchScreen.storyboard in Resources */,
 				335DED66210BF38400E5E64A /* TextualQuestionTableViewCell.xib in Resources */,
 				335DED4E210BED2400E5E64A /* Assets.xcassets in Resources */,
@@ -282,7 +294,7 @@
 				335DED61210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift in Sources */,
 				3389BBDA210D1DCB006059FA /* CountryFlagTableViewCell.swift in Sources */,
 				335DED6A210BFF5500E5E64A /* QuestionType.swift in Sources */,
-				335DED49210BED2300E5E64A /* ViewController.swift in Sources */,
+				3389BBE3210D3050006059FA /* GameModeSelectionViewController.swift in Sources */,
 				335DED68210BFC7700E5E64A /* TextualQuestionViewModel.swift in Sources */,
 				3389BBD4210CEE39006059FA /* Alert.swift in Sources */,
 				3389BBC9210CAFBC006059FA /* Capital.swift in Sources */,

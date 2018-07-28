@@ -26,7 +26,41 @@ enum Country: String, CaseIterable {
     // ASIA
     case afghanistan, armenia, bangladesh, bhutan, brunei, china, cyprus, georgia, india, indonesia, iran, iraq, israel, japan, jordan, kuwait, lebanon, malaysia, maldives, nepal, pakistan, russia, singapore, syria, turkey
     
-    // Europe
+    // EUROPE
     case albania, andorra, austria, azerbaijan, belarus, belgium, bulgaria, croatia, denmark, estonia, finland, france, germany, greece, hungary, iceland, ireland, italy, kazakhstan, kosovo, latvia, liechtenstein, lithuania, luxembourg, macedonia, malta, moldova, monaco, montenegro, netherlands, norway, poland, portugal, romania, serbia, slovakia, slovenia, spain, sweden, switzerland, ukraine
 
+    // NORTH AMERICA
+    case bahamas, barbados, belize, canada, cuba, dominica, guatemala, haiti, honduras, jamaica, mexico, nicaragua, panama
+    
+    // SOUTH AMERICA
+    case argentina, brazil, chile, colombia, ecuador, guyana, paraguay, peru, suriname, uruguay, venezuela
+
+
 }
+
+/*
+ 
+ Argentina      Buenos Aires
+ Brazil    	    Brasilia
+ Chile          Santiago
+ Colombia    	Bogotá
+ Ecuador        Quito
+ Guyana         Georgetown
+ Paraguay       Asunción
+ Peru           Lima
+ Suriname       Paramaribo
+ Uruguay        Montevideo
+ Venezuela      Caracas
+ */
+
+Argentina
+Brazil
+Chile
+Colombia
+Ecuador
+Guyana
+Paraguay
+Peru
+Suriname
+Uruguay
+Venezuela

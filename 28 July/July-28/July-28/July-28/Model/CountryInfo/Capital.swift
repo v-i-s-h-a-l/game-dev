@@ -126,6 +126,34 @@ extension Country {
         case .sweden: return "Stockholm"
         case .switzerland: return "Bern"
         case .ukraine: return "Kyiv"
+            
+        // NORTH AMERICA
+        case .bahamas: return "Nassau"
+        case .barbados: return "Bridgetown"
+        case .belize: return "Belmopan"
+        case .canada: return "Ottawa"
+        case .cuba: return "Havana"
+        case .dominica: return "Roseau"
+        case .guatemala: return "Guatemala City"
+        case .haiti: return "Port-au-Prince"
+        case .honduras: return "Tegucigalpa"
+        case .jamaica: return "Kingston"
+        case .mexico: return "Mexico City"
+        case .nicaragua: return "Managua"
+        case .panama: return "Panama City"
+
+        // SOUTH AMERICA
+        case .argentina: return "Buenos Aires"
+        case .brazil: return "Brasilia"
+        case .chile: return "Santiago"
+        case .colombia: return "Bogotá"
+        case .ecuador: return "Quito"
+        case .guyana: return "Georgetown"
+        case .paraguay: return "Asunción"
+        case .peru: return "Lima"
+        case .suriname: return "Paramaribo"
+        case .uruguay: return "Montevideo"
+        case .venezuela: return "Caracas"
 
         }
     }

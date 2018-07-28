@@ -8,13 +8,15 @@
 
 import Foundation
 
-enum QuestionType: Int {
+enum QuestionType: Int, CaseIterable {
     case capitalCountry = 0         // guess country from given capital
     case countryCapital             // guess capital from given country
+    case countryFlag                // guess the flag for the given country
     
     var cellClassName: String {
         switch self {
         case .capitalCountry, .countryCapital: return String(describing: TextualQuestionTableViewCell.self)
+        case .countryFlag: return String(describing: CountryFlagTableViewCell.self)
         }
     }
 
@@ -33,11 +35,11 @@ enum QuestionType: Int {
                 "Which one of the following is the capital of %@?",
                 "The capital of %@ is:",
                 ].randomElement() ?? "The capital of %@ is:"
-            
+        case .countryFlag:
+            return [
+                "Which of the following is the flag of %@?",
+                "The flag of %@ is:",
+                ].randomElement() ?? "The flag of %@ is:"
         }
-    }
-    
-    static var allCases: [QuestionType] {
-        return [.capitalCountry, .countryCapital]
     }
 }

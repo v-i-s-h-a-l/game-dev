@@ -10,7 +10,7 @@ import Foundation
 
 enum QuestionManager {
 
-    static func textualQuestionWith(_ country: Country, questionType: QuestionType) -> TextualQuestionViewModel {
+    static func textualQuestionWith(_ country: Country, questionType: QuestionType) -> TextualQuestionViewModel? {
         let question: String
         let options: [String]
         
@@ -24,8 +24,19 @@ enum QuestionManager {
         case .countryCapital:
             question = String(format: questionType.questionFormat, country.rawValue.capitalized)
             options = randomCountries.map { $0.capital.capitalized }
+        case .countryFlag:
+            return nil
         }
         return TextualQuestionViewModel(question: question, options: options, correctOptionIndex: correctOptionIndex)
+    }
+    
+    static func countryFlagQuestionWith(_ country: Country) -> CountryFlagQuestionViewModel {
+        let randomCountries = randomCountriesWith(country)
+        let correctOptionIndex: Int = randomCountries.index(of: country) ?? -1
+        
+        let question = String(format: QuestionType.countryFlag.questionFormat, country.rawValue.capitalized)
+        let options = randomCountries.map { $0.flag }
+        return CountryFlagQuestionViewModel(question: question, options: options, correctOptionIndex: correctOptionIndex)
     }
     
     private static func randomCountriesWith(_ country: Country) -> [Country] {

@@ -25,6 +25,10 @@
 		3389BBD2210CC739006059FA /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD1210CC739006059FA /* ScoreManager.swift */; };
 		3389BBD4210CEE39006059FA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD3210CEE39006059FA /* Alert.swift */; };
 		3389BBD6210D17DA006059FA /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD5210D17DA006059FA /* Flag.swift */; };
+		3389BBDA210D1DCB006059FA /* CountryFlagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD8210D1DCB006059FA /* CountryFlagTableViewCell.swift */; };
+		3389BBDB210D1DCB006059FA /* CountryFlagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3389BBD9210D1DCB006059FA /* CountryFlagTableViewCell.xib */; };
+		3389BBDD210D2041006059FA /* CountryFlagQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBDC210D2041006059FA /* CountryFlagQuestionViewModel.swift */; };
+		3389BBDF210D2168006059FA /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBDE210D2168006059FA /* QuestionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		3389BBD1210CC739006059FA /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		3389BBD3210CEE39006059FA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3389BBD5210D17DA006059FA /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
+		3389BBD8210D1DCB006059FA /* CountryFlagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlagTableViewCell.swift; sourceTree = "<group>"; };
+		3389BBD9210D1DCB006059FA /* CountryFlagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryFlagTableViewCell.xib; sourceTree = "<group>"; };
+		3389BBDC210D2041006059FA /* CountryFlagQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlagQuestionViewModel.swift; sourceTree = "<group>"; };
+		3389BBDE210D2168006059FA /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +157,9 @@
 		335DED62210BF33100E5E64A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3389BBD7210D1DA3006059FA /* CountryFlag */,
 				335DED6D210C0C4800E5E64A /* TextualQuestion */,
+				3389BBDE210D2168006059FA /* QuestionTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -181,6 +191,16 @@
 				3389BBCF210CB60E006059FA /* InfoHeaderView.xib */,
 			);
 			path = InfoHeader;
+			sourceTree = "<group>";
+		};
+		3389BBD7210D1DA3006059FA /* CountryFlag */ = {
+			isa = PBXGroup;
+			children = (
+				3389BBD8210D1DCB006059FA /* CountryFlagTableViewCell.swift */,
+				3389BBD9210D1DCB006059FA /* CountryFlagTableViewCell.xib */,
+				3389BBDC210D2041006059FA /* CountryFlagQuestionViewModel.swift */,
+			);
+			path = CountryFlag;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +265,7 @@
 				335DED51210BED2400E5E64A /* LaunchScreen.storyboard in Resources */,
 				335DED66210BF38400E5E64A /* TextualQuestionTableViewCell.xib in Resources */,
 				335DED4E210BED2400E5E64A /* Assets.xcassets in Resources */,
+				3389BBDB210D1DCB006059FA /* CountryFlagTableViewCell.xib in Resources */,
 				3389BBD0210CB60E006059FA /* InfoHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,13 +280,16 @@
 				3389BBD2210CC739006059FA /* ScoreManager.swift in Sources */,
 				3389BBD6210D17DA006059FA /* Flag.swift in Sources */,
 				335DED61210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift in Sources */,
+				3389BBDA210D1DCB006059FA /* CountryFlagTableViewCell.swift in Sources */,
 				335DED6A210BFF5500E5E64A /* QuestionType.swift in Sources */,
 				335DED49210BED2300E5E64A /* ViewController.swift in Sources */,
 				335DED68210BFC7700E5E64A /* TextualQuestionViewModel.swift in Sources */,
 				3389BBD4210CEE39006059FA /* Alert.swift in Sources */,
 				3389BBC9210CAFBC006059FA /* Capital.swift in Sources */,
+				3389BBDF210D2168006059FA /* QuestionTableViewCell.swift in Sources */,
 				335DED6C210C018200E5E64A /* Country.swift in Sources */,
 				335DED6F210C0C8C00E5E64A /* QuestionManager.swift in Sources */,
+				3389BBDD210D2041006059FA /* CountryFlagQuestionViewModel.swift in Sources */,
 				335DED5E210BF13600E5E64A /* QuestionTableViewController.swift in Sources */,
 				3389BBCE210CB5FA006059FA /* InfoHeaderView.swift in Sources */,
 				335DED65210BF38400E5E64A /* TextualQuestionTableViewCell.swift in Sources */,

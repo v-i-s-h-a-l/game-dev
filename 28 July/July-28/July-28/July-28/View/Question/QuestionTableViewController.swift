@@ -44,7 +44,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
 
         setupTableView()
         view.backgroundColor = ScoreManager.backgroundColor1
-        let cellClassNames = [TextualQuestionTableViewCell.self].map { String(describing: $0) }
+        let cellClassNames = [TextualQuestionTableViewCell.self, CountryFlagTableViewCell.self].map { String(describing: $0) }
         registerCellNibsNamed(cellClassNames)
         addInfoHeaderView()
     }
@@ -119,14 +119,31 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let textualQuestionCell = tableView.dequeueReusableCell(withIdentifier: String(describing: TextualQuestionTableViewCell.self), for: indexPath) as! TextualQuestionTableViewCell
-        let viewModel = QuestionManager.textualQuestionWith(currentCountry, questionType: currentQuestionType)
-        textualQuestionCell.configureWith(viewModel: viewModel)
+    fileprivate func textualQuestionFor(_ tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TextualQuestionTableViewCell.self), for: indexPath) as! TextualQuestionTableViewCell
+        guard let viewModel = QuestionManager.textualQuestionWith(currentCountry, questionType: currentQuestionType) else { return UITableViewCell() }
+        cell.configureWith(viewModel: viewModel)
         currentQuestion = viewModel
         
-        textualQuestionCell.onOptionSelected = optionSelected
+        cell.onOptionSelected = optionSelected
         
-        return textualQuestionCell
+        return cell
+    }
+    
+    fileprivate func countryFlagQuestionCellFor(_ tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CountryFlagTableViewCell.self), for: indexPath) as! CountryFlagTableViewCell
+        let viewModel = QuestionManager.countryFlagQuestionWith(currentCountry)
+        cell.configureWith(viewModel: viewModel)
+        currentQuestion = viewModel
+        
+        cell.onOptionSelected = optionSelected
+        
+        return cell
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch currentQuestionType {
+        case .capitalCountry, .countryCapital: return textualQuestionFor(tableView, at: indexPath)
+        case .countryFlag: return countryFlagQuestionCellFor(tableView, at: indexPath)
+        }
     }
 }

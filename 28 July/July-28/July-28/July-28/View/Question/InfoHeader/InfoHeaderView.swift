@@ -21,7 +21,7 @@ class InfoHeaderView: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        layer.backgroundColor = UIColor.darkGray.cgColor
+        layer.backgroundColor = ScoreManager.backgroundColor1.cgColor
     }
 
     func setScore(_ score: Int, highScore: Int) {
@@ -30,10 +30,10 @@ class InfoHeaderView: UITableViewHeaderFooterView {
 
     func animateResponse(isAnswerCorrect: Bool) {
         UIView.animate(withDuration: animatioDuration) {
-            self.layer.backgroundColor = (isAnswerCorrect ? UIColor.green : UIColor.red).cgColor
+            self.layer.backgroundColor = (isAnswerCorrect ? ScoreManager.correctAnswerColor : ScoreManager.incorrectAnswerColor).cgColor
         }
         UIView.animate(withDuration: animatioDuration, delay: animatioDuration * 4, options: [], animations: {
-            self.layer.backgroundColor = UIColor.darkGray.cgColor
+            self.layer.backgroundColor = ScoreManager.backgroundColor1.cgColor
         }, completion: nil)
     }
 

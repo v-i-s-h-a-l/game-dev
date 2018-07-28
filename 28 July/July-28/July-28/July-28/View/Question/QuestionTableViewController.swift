@@ -43,7 +43,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         super.viewDidLoad()
 
         setupTableView()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = ScoreManager.backgroundColor1
         let cellClassNames = [TextualQuestionTableViewCell.self].map { String(describing: $0) }
         registerCellNibsNamed(cellClassNames)
         addInfoHeaderView()

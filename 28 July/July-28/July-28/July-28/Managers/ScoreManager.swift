@@ -6,7 +6,7 @@
 //  Copyright © 2018 v-i-s-h-a-l. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct ScoreManager {
     
@@ -15,6 +15,11 @@ struct ScoreManager {
 
     static let correctAnswerScore: Int = 20
     static let incorrectAnswerScore: Int = -10
+    
+    static let correctAnswerColor: UIColor = .green
+    static let incorrectAnswerColor: UIColor = .red
+    static let backgroundColor1: UIColor = .darkGray
+
     static var highScore: Int {
         get {
             return UserDefaults.standard.integer(forKey: "highScore")

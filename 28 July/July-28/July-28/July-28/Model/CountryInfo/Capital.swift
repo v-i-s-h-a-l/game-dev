@@ -108,7 +108,7 @@ extension Country {
         case .latvia: return "Riga"
         case .liechtenstein: return "Vaduz"
         case .lithuania: return "Vilnius"
-        case .luxembourg: return "Luxembourg cit"
+        case .luxembourg: return "Luxembourg city"
         case .macedonia: return "Skopje"
         case .malta: return "Valletta"
         case .moldova: return "Chisinau"

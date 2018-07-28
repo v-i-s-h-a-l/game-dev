@@ -19,6 +19,11 @@ import Foundation
 
 enum Country: String, CaseIterable {
     
+    // AFRICA
+    case algeria, angola, benin, botswana, burundi, cameroon, chad, comoros, djibouti, egypt, eritrea, ethiopia, gabon, gambia, ghana, guinea, kenya, lesotho, liberia, libya, madagascar, malawi, mali, mauritania, mauritius, morocco, mozambique, namibia, niger, nigeria, rwanda, senegal, seychelles, somalia, sudan, tanzania, togo, tunisia, uganda, zambia, zimbabwe
+
+    
     // ASIA
     case afghanistan, armenia, bangladesh, bhutan, brunei, china, cyprus, georgia, india, indonesia, iran, iraq, israel, japan, jordan, kuwait, lebanon, malaysia, maldives, nepal, pakistan, russia, singapore, syria, turkey
+    
 }

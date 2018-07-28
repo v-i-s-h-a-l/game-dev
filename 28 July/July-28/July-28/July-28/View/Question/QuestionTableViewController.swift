@@ -8,24 +8,49 @@
 
 import UIKit
 
-class QuestionTableViewController: UITableViewController, PerformsTableViewBasicSetup {
+class QuestionTableViewController: UITableViewController, PerformsTableViewBasicSetup {    
     
     private var currentCountry: Country = .india
     private var currentQuestion: Question!
     private var currentQuestionType: QuestionType = .capitalCountry
+    private var score: Int = 0 {
+        didSet {
+            if score < 0 {
+                score = 0
+            }
+            if score > highScore {
+                highScore = score
+            }
+            infoHeaderView.setScore(score, highScore: highScore)
+        }
+    }
+    private var highScore: Int = ScoreManager.highScore {
+        didSet {
+            ScoreManager.highScore = highScore
+        }
+    }
+    
+    private lazy var infoHeaderView: InfoHeaderView = InfoHeaderView.loadFromNib()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
+        view.backgroundColor = .darkGray
         let cellClassNames = [TextualQuestionTableViewCell.self].map { String(describing: $0) }
-        registerNibsNamed(cellClassNames)
+        registerCellNibsNamed(cellClassNames)
+        addInfoHeaderView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         askNextQuestion()
+    }
+    
+    private func addInfoHeaderView() {
+        tableView.tableHeaderView = infoHeaderView
+        infoHeaderView.setScore(0, highScore: highScore)
     }
     
     func askNextQuestion() {
@@ -36,6 +61,10 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     }
     
     func optionSelected(_ option: Int) {
+        let isAnswerCorrect = option == currentQuestion.correctOptionIndex
+        infoHeaderView.animateResponse(isAnswerCorrect: isAnswerCorrect)
+        score += isAnswerCorrect ? ScoreManager.correctAnswerScore : ScoreManager.incorrectAnswerScore
+        
         askNextQuestion()
     }
     

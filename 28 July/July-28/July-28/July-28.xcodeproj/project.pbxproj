@@ -20,6 +20,9 @@
 		335DED6C210C018200E5E64A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED6B210C018200E5E64A /* Country.swift */; };
 		335DED6F210C0C8C00E5E64A /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DED6E210C0C8C00E5E64A /* QuestionManager.swift */; };
 		3389BBC9210CAFBC006059FA /* Capital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBC8210CAFBC006059FA /* Capital.swift */; };
+		3389BBCE210CB5FA006059FA /* InfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBCD210CB5FA006059FA /* InfoHeaderView.swift */; };
+		3389BBD0210CB60E006059FA /* InfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3389BBCF210CB60E006059FA /* InfoHeaderView.xib */; };
+		3389BBD2210CC739006059FA /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD1210CC739006059FA /* ScoreManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		335DED6B210C018200E5E64A /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		335DED6E210C0C8C00E5E64A /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		3389BBC8210CAFBC006059FA /* Capital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capital.swift; sourceTree = "<group>"; };
+		3389BBCD210CB5FA006059FA /* InfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHeaderView.swift; sourceTree = "<group>"; };
+		3389BBCF210CB60E006059FA /* InfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoHeaderView.xib; sourceTree = "<group>"; };
+		3389BBD1210CC739006059FA /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +80,7 @@
 				335DED5B210BEE2200E5E64A /* Resources */,
 				335DED58210BEDF100E5E64A /* Model */,
 				335DED5A210BEE0D00E5E64A /* View */,
-				335DED59210BEDFF00E5E64A /* QuestionManager */,
+				335DED59210BEDFF00E5E64A /* Managers */,
 				335DED46210BED2300E5E64A /* AppDelegate.swift */,
 				335DED52210BED2400E5E64A /* Info.plist */,
 			);
@@ -90,12 +96,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		335DED59210BEDFF00E5E64A /* QuestionManager */ = {
+		335DED59210BEDFF00E5E64A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				335DED6E210C0C8C00E5E64A /* QuestionManager.swift */,
+				3389BBD1210CC739006059FA /* ScoreManager.swift */,
 			);
-			path = QuestionManager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		335DED5A210BEE0D00E5E64A /* View */ = {
@@ -119,6 +126,7 @@
 		335DED5C210BF11100E5E64A /* Question */ = {
 			isa = PBXGroup;
 			children = (
+				3389BBCC210CB534006059FA /* InfoHeader */,
 				335DED62210BF33100E5E64A /* Cells */,
 				335DED5D210BF13600E5E64A /* QuestionTableViewController.swift */,
 			);
@@ -158,6 +166,15 @@
 				3389BBC8210CAFBC006059FA /* Capital.swift */,
 			);
 			path = CountryInfo;
+			sourceTree = "<group>";
+		};
+		3389BBCC210CB534006059FA /* InfoHeader */ = {
+			isa = PBXGroup;
+			children = (
+				3389BBCD210CB5FA006059FA /* InfoHeaderView.swift */,
+				3389BBCF210CB60E006059FA /* InfoHeaderView.xib */,
+			);
+			path = InfoHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +239,7 @@
 				335DED51210BED2400E5E64A /* LaunchScreen.storyboard in Resources */,
 				335DED66210BF38400E5E64A /* TextualQuestionTableViewCell.xib in Resources */,
 				335DED4E210BED2400E5E64A /* Assets.xcassets in Resources */,
+				3389BBD0210CB60E006059FA /* InfoHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3389BBD2210CC739006059FA /* ScoreManager.swift in Sources */,
 				335DED61210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift in Sources */,
 				335DED6A210BFF5500E5E64A /* QuestionType.swift in Sources */,
 				335DED49210BED2300E5E64A /* ViewController.swift in Sources */,
@@ -240,6 +259,7 @@
 				335DED6C210C018200E5E64A /* Country.swift in Sources */,
 				335DED6F210C0C8C00E5E64A /* QuestionManager.swift in Sources */,
 				335DED5E210BF13600E5E64A /* QuestionTableViewController.swift in Sources */,
+				3389BBCE210CB5FA006059FA /* InfoHeaderView.swift in Sources */,
 				335DED65210BF38400E5E64A /* TextualQuestionTableViewCell.swift in Sources */,
 				335DED47210BED2300E5E64A /* AppDelegate.swift in Sources */,
 			);

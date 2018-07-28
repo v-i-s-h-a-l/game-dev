@@ -10,7 +10,7 @@ import UIKit
 
 protocol PerformsTableViewBasicSetup {
     func setupTableView()
-    func registerNibsNamed(_ names: [String])
+    func registerCellNibsNamed(_ names: [String])
 }
 
 extension PerformsTableViewBasicSetup where Self: UITableViewController {
@@ -21,9 +21,11 @@ extension PerformsTableViewBasicSetup where Self: UITableViewController {
         tableView.estimatedRowHeight = 44.0
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        tableView.bounces = false
+        tableView.showsVerticalScrollIndicator = false
     }
     
-    func registerNibsNamed(_ names: [String]) {
+    func registerCellNibsNamed(_ names: [String]) {
         for name in names {
             tableView.register(UINib(nibName: name, bundle: nil), forCellReuseIdentifier: name)
         }

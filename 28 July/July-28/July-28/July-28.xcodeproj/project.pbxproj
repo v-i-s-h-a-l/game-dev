@@ -24,6 +24,7 @@
 		3389BBD0210CB60E006059FA /* InfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3389BBCF210CB60E006059FA /* InfoHeaderView.xib */; };
 		3389BBD2210CC739006059FA /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD1210CC739006059FA /* ScoreManager.swift */; };
 		3389BBD4210CEE39006059FA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD3210CEE39006059FA /* Alert.swift */; };
+		3389BBD6210D17DA006059FA /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBD5210D17DA006059FA /* Flag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		3389BBCF210CB60E006059FA /* InfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoHeaderView.xib; sourceTree = "<group>"; };
 		3389BBD1210CC739006059FA /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		3389BBD3210CEE39006059FA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		3389BBD5210D17DA006059FA /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			children = (
 				335DED6B210C018200E5E64A /* Country.swift */,
 				3389BBC8210CAFBC006059FA /* Capital.swift */,
+				3389BBD5210D17DA006059FA /* Flag.swift */,
 			);
 			path = CountryInfo;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3389BBD2210CC739006059FA /* ScoreManager.swift in Sources */,
+				3389BBD6210D17DA006059FA /* Flag.swift in Sources */,
 				335DED61210BF1E100E5E64A /* PerformsTableViewBasicSetup.swift in Sources */,
 				335DED6A210BFF5500E5E64A /* QuestionType.swift in Sources */,
 				335DED49210BED2300E5E64A /* ViewController.swift in Sources */,

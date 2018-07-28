@@ -94,6 +94,7 @@ extension Country {
         case .bulgaria: return "🇧🇬"
         case .croatia: return "🇭🇷"
         case .denmark: return "🇩🇰"
+        case .england: return "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
         case .estonia: return "🇪🇪"
         case .finland: return "🇫🇮"
         case .france: return "🇫🇷"
@@ -119,6 +120,7 @@ extension Country {
         case .poland: return "🇵🇱"
         case .portugal: return "🇵🇹"
         case .romania: return "🇷🇴"
+        case .scotland: return "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
         case .serbia: return "🇷🇸"
         case .slovakia: return "🇸🇰"
         case .slovenia: return "🇸🇮"
@@ -126,6 +128,7 @@ extension Country {
         case .sweden: return "🇸🇪"
         case .switzerland: return "🇨🇭"
         case .ukraine: return "🇺🇦"
+        case .wales: return "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
             
         // NORTH AMERICA
         case .bahamas: return "🇧🇸"

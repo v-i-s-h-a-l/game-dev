@@ -22,9 +22,17 @@ enum QuestionType: Int {
         switch self {
         // TODO: add more question formats
         case .capitalCountry:
-            return "%@ is the capital of which country?"
+            return [
+                "%@ is the capital of which country?",
+                "Which country's capital is %@?",
+                "%@ is the capital of:",
+                ].randomElement() ?? "%@ is the capital of which country?"
         case .countryCapital:
-            return "What is the capital of %@?"
+            return [
+                "What is the capital of %@?",
+                "Which one of the following is the capital of %@?",
+                "The capital of %@ is:",
+                ].randomElement() ?? "What is the capital of %@?"
             
         }
     }

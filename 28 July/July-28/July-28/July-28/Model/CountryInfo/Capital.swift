@@ -94,6 +94,7 @@ extension Country {
         case .bulgaria: return "Sofia"
         case .croatia: return "Zagreb"
         case .denmark: return "Copenhagen"
+        case .england: return "London"
         case .estonia: return "Tallinn"
         case .finland: return "Helsinki"
         case .france: return "Paris"
@@ -119,6 +120,7 @@ extension Country {
         case .poland: return "Warsaw"
         case .portugal: return "Lisbon"
         case .romania: return "Bucharest"
+        case .scotland: return "Edinburgh"
         case .serbia: return "Belgrade"
         case .slovakia: return "Bratislava"
         case .slovenia: return "Ljubljana"
@@ -126,6 +128,7 @@ extension Country {
         case .sweden: return "Stockholm"
         case .switzerland: return "Bern"
         case .ukraine: return "Kyiv"
+        case .wales: return "Cardiff"
             
         // NORTH AMERICA
         case .bahamas: return "Nassau"

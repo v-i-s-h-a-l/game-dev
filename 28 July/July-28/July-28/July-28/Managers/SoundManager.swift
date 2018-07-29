@@ -7,21 +7,15 @@
 //
 
 import Foundation
-import AVFoundation
-
-
+import UIKit
+import AVKit
 struct  SoundManager {
-    
- static func play(_ soundURL: URL?){
-    guard let soundURL = soundURL else { return }
-    do {
-       let audiPlayer = try AVAudioPlayer(contentsOf: soundURL)
-        audiPlayer.prepareToPlay()
-        audiPlayer.play()
-    }catch{
-        
-    }
-    
+   
+   static func play(_ soundURL: URL?){
+        guard let soundURL = soundURL else {return}
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.player = AVPlayer(url: soundURL)
+        appDelegate.player?.play()
     }
     
 }

@@ -9,7 +9,6 @@
 import Foundation
 
 struct CountryFlagQuestionViewModel: Question {
-    
     var question: String
     let options: [String]
     var correctOptionIndex: Int

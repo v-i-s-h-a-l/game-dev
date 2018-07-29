@@ -88,9 +88,14 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         let isAnswerCorrect = option == currentQuestion.correctOptionIndex
         infoHeaderView.animateResponse(isAnswerCorrect: isAnswerCorrect)
         score += isAnswerCorrect ? ScoreManager.correctAnswerScore : ScoreManager.incorrectAnswerScore
-        
+        // by Maverick
+        let sound = isAnswerCorrect ? Sound.Default_Sound.correctAnswer : Sound.Default_Sound.wrongAnswer
+        SoundManager.play(sound.soundURL)
+        //
         askNextQuestion()
     }
+    
+    
     
     func onTimeOver() {
         timer.invalidate()

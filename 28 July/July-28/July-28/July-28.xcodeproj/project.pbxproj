@@ -30,6 +30,10 @@
 		3389BBDF210D2168006059FA /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBDE210D2168006059FA /* QuestionTableViewCell.swift */; };
 		3389BBE3210D3050006059FA /* GameModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389BBE1210D3050006059FA /* GameModeSelectionViewController.swift */; };
 		3389BBE4210D3050006059FA /* GameModeSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3389BBE2210D3050006059FA /* GameModeSelectionViewController.xib */; };
+		C3728183210E0B730090005D /* CorrectAnswerSound.mov in Resources */ = {isa = PBXBuildFile; fileRef = C3728181210E0B730090005D /* CorrectAnswerSound.mov */; };
+		C3728184210E0B730090005D /* WrongAnswerSound.mov in Resources */ = {isa = PBXBuildFile; fileRef = C3728182210E0B730090005D /* WrongAnswerSound.mov */; };
+		C3728186210E0CFB0090005D /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3728185210E0CFB0090005D /* SoundManager.swift */; };
+		C3728188210E13370090005D /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3728187210E13370090005D /* Sound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		3389BBDE210D2168006059FA /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		3389BBE1210D3050006059FA /* GameModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeSelectionViewController.swift; sourceTree = "<group>"; };
 		3389BBE2210D3050006059FA /* GameModeSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameModeSelectionViewController.xib; sourceTree = "<group>"; };
+		C3728181210E0B730090005D /* CorrectAnswerSound.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = CorrectAnswerSound.mov; sourceTree = "<group>"; };
+		C3728182210E0B730090005D /* WrongAnswerSound.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = WrongAnswerSound.mov; sourceTree = "<group>"; };
+		C3728185210E0CFB0090005D /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		C3728187210E13370090005D /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 		335DED45210BED2300E5E64A /* July-28 */ = {
 			isa = PBXGroup;
 			children = (
+				C3728180210E0B5D0090005D /* Sound */,
 				335DED5F210BF1B000E5E64A /* Helpers and Protcols */,
 				335DED5B210BEE2200E5E64A /* Resources */,
 				335DED58210BEDF100E5E64A /* Model */,
@@ -115,6 +124,7 @@
 			children = (
 				335DED6E210C0C8C00E5E64A /* QuestionManager.swift */,
 				3389BBD1210CC739006059FA /* ScoreManager.swift */,
+				C3728185210E0CFB0090005D /* SoundManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -214,6 +224,16 @@
 			path = GameMode;
 			sourceTree = "<group>";
 		};
+		C3728180210E0B5D0090005D /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				C3728181210E0B730090005D /* CorrectAnswerSound.mov */,
+				C3728182210E0B730090005D /* WrongAnswerSound.mov */,
+				C3728187210E13370090005D /* Sound.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,8 +295,10 @@
 			files = (
 				3389BBE4210D3050006059FA /* GameModeSelectionViewController.xib in Resources */,
 				335DED51210BED2400E5E64A /* LaunchScreen.storyboard in Resources */,
+				C3728184210E0B730090005D /* WrongAnswerSound.mov in Resources */,
 				335DED66210BF38400E5E64A /* TextualQuestionTableViewCell.xib in Resources */,
 				335DED4E210BED2400E5E64A /* Assets.xcassets in Resources */,
+				C3728183210E0B730090005D /* CorrectAnswerSound.mov in Resources */,
 				3389BBDB210D1DCB006059FA /* CountryFlagTableViewCell.xib in Resources */,
 				3389BBD0210CB60E006059FA /* InfoHeaderView.xib in Resources */,
 			);
@@ -302,10 +324,12 @@
 				335DED6C210C018200E5E64A /* Country.swift in Sources */,
 				335DED6F210C0C8C00E5E64A /* QuestionManager.swift in Sources */,
 				3389BBDD210D2041006059FA /* CountryFlagQuestionViewModel.swift in Sources */,
+				C3728188210E13370090005D /* Sound.swift in Sources */,
 				335DED5E210BF13600E5E64A /* QuestionTableViewController.swift in Sources */,
 				3389BBCE210CB5FA006059FA /* InfoHeaderView.swift in Sources */,
 				335DED65210BF38400E5E64A /* TextualQuestionTableViewCell.swift in Sources */,
 				335DED47210BED2300E5E64A /* AppDelegate.swift in Sources */,
+				C3728186210E0CFB0090005D /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import GameplayKit
 
 class QuestionTableViewController: UITableViewController, PerformsTableViewBasicSetup {    
-    
+
+    private var selectedQuestionTypes: [QuestionType] = []
     private var currentCountry: Country = .india
     private var currentQuestion: Question!
     private var currentQuestionType: QuestionType = .capitalCountry
@@ -17,9 +19,6 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         didSet {
             if score < 0 {
                 score = 0
-            }
-            if score > highScore {
-                highScore = score
             }
             infoHeaderView.setScore(score, highScore: highScore)
         }
@@ -29,7 +28,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
             ScoreManager.highScore = highScore
         }
     }
-    private var timeRemaining: Double = ScoreManager.maxTime {
+    private var timeRemaining: Double = ScoreManager.maxTime + ScoreManager.stepTime {
         didSet {
             infoHeaderView.setTime(timeRemaining)
         }
@@ -41,9 +40,10 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        selectedQuestionTypes = ScoreManager.selectedGameMode.questionTypes
         setupTableView()
-        view.backgroundColor = .darkGray
-        let cellClassNames = [TextualQuestionTableViewCell.self].map { String(describing: $0) }
+        view.backgroundColor = ScoreManager.backgroundColor1
+        let cellClassNames = [TextualQuestionTableViewCell.self, CountryFlagTableViewCell.self].map { String(describing: $0) }
         registerCellNibsNamed(cellClassNames)
         addInfoHeaderView()
     }
@@ -63,6 +63,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     private func addInfoHeaderView() {
         tableView.tableHeaderView = infoHeaderView
         infoHeaderView.setScore(0, highScore: highScore)
+        infoHeaderView.setTime(ScoreManager.maxTime)
     }
     
     func stepTimer(_ timer: Timer) {
@@ -73,8 +74,12 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     }
     
     func askNextQuestion() {
-        currentCountry = Country.allCases.randomElement() ?? Country.india
-        currentQuestionType = QuestionType.allCases.randomElement() ?? QuestionType.capitalCountry
+        let allCountries = Country.allCases
+        let sharedRanom = GKRandomSource.sharedRandom()
+        let randomIndex = sharedRanom.nextInt(upperBound: allCountries.count - 1)
+        currentCountry = (sharedRanom.arrayByShufflingObjects(in: allCountries) as! [Country])[randomIndex]
+        
+        currentQuestionType = selectedQuestionTypes.randomElement() ?? QuestionType.capitalCountry
 
         tableView.reloadSections([0], with: .fade)
     }
@@ -90,14 +95,17 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     func onTimeOver() {
         timer.invalidate()
         timeRemaining = 0.0
+        if score > highScore {
+            highScore = score
+        }
         // Show finished alert
-        let restartAction = UIAlertAction(title: "Restart", style: .default) { _ in
+        let restartAction = UIAlertAction(title: "🔁", style: .default) { _ in
             self.reset()
         }
-        let goBackAction = UIAlertAction(title: "Go back", style: .destructive) { _ in
+        let goBackAction = UIAlertAction(title: "🔙", style: .destructive) { _ in
             self.dismiss(animated: true, completion: nil)
         }
-        showAlertWith(title: "Time's Up!!", message: ScoreManager.messageFor(score: score), actions: [goBackAction, restartAction])
+        showAlertWith(title: "🕛 Time's Up!!", message: ScoreManager.messageFor(score: score), actions: [goBackAction, restartAction])
     }
     
     private func reset() {
@@ -114,14 +122,31 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let textualQuestionCell = tableView.dequeueReusableCell(withIdentifier: String(describing: TextualQuestionTableViewCell.self), for: indexPath) as! TextualQuestionTableViewCell
-        let viewModel = QuestionManager.textualQuestionWith(currentCountry, questionType: currentQuestionType)
-        textualQuestionCell.configureWith(viewModel: viewModel)
+    fileprivate func textualQuestionFor(_ tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TextualQuestionTableViewCell.self), for: indexPath) as! TextualQuestionTableViewCell
+        guard let viewModel = QuestionManager.textualQuestionWith(currentCountry, questionType: currentQuestionType) else { return UITableViewCell() }
+        cell.configureWith(viewModel: viewModel)
         currentQuestion = viewModel
         
-        textualQuestionCell.onOptionSelected = optionSelected
+        cell.onOptionSelected = optionSelected
         
-        return textualQuestionCell
+        return cell
+    }
+    
+    fileprivate func countryFlagQuestionCellFor(_ tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CountryFlagTableViewCell.self), for: indexPath) as! CountryFlagTableViewCell
+        let viewModel = QuestionManager.countryFlagQuestionWith(currentCountry)
+        cell.configureWith(viewModel: viewModel)
+        currentQuestion = viewModel
+        
+        cell.onOptionSelected = optionSelected
+        
+        return cell
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch currentQuestionType {
+        case .capitalCountry, .countryCapital, .flagCountry: return textualQuestionFor(tableView, at: indexPath)
+        case .countryFlag: return countryFlagQuestionCellFor(tableView, at: indexPath)
+        }
     }
 }

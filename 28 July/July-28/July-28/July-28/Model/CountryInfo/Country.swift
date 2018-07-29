@@ -27,7 +27,7 @@ enum Country: String, CaseIterable {
     case afghanistan, armenia, bangladesh, bhutan, brunei, china, cyprus, georgia, india, indonesia, iran, iraq, israel, japan, jordan, kuwait, lebanon, malaysia, maldives, nepal, pakistan, russia, singapore, syria, turkey
     
     // EUROPE
-    case albania, andorra, austria, azerbaijan, belarus, belgium, bulgaria, croatia, denmark, estonia, finland, france, germany, greece, hungary, iceland, ireland, italy, kazakhstan, kosovo, latvia, liechtenstein, lithuania, luxembourg, macedonia, malta, moldova, monaco, montenegro, netherlands, norway, poland, portugal, romania, serbia, slovakia, slovenia, spain, sweden, switzerland, ukraine
+    case albania, andorra, austria, azerbaijan, belarus, belgium, bulgaria, croatia, denmark, england, estonia, finland, france, germany, greece, hungary, iceland, ireland, italy, kazakhstan, kosovo, latvia, liechtenstein, lithuania, luxembourg, macedonia, malta, moldova, monaco, montenegro, netherlands, norway, poland, portugal, romania, scotland, serbia, slovakia, slovenia, spain, sweden, switzerland, ukraine, wales
 
     // NORTH AMERICA
     case bahamas, barbados, belize, canada, cuba, dominica, guatemala, haiti, honduras, jamaica, mexico, nicaragua, panama

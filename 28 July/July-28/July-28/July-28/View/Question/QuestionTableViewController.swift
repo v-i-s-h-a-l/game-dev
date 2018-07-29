@@ -28,7 +28,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
             ScoreManager.highScore = highScore
         }
     }
-    private var timeRemaining: Double = ScoreManager.maxTime {
+    private var timeRemaining: Double = ScoreManager.maxTime + ScoreManager.stepTime {
         didSet {
             infoHeaderView.setTime(timeRemaining)
         }
@@ -63,6 +63,7 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
     private func addInfoHeaderView() {
         tableView.tableHeaderView = infoHeaderView
         infoHeaderView.setScore(0, highScore: highScore)
+        infoHeaderView.setTime(ScoreManager.maxTime)
     }
     
     func stepTimer(_ timer: Timer) {
@@ -98,10 +99,10 @@ class QuestionTableViewController: UITableViewController, PerformsTableViewBasic
             highScore = score
         }
         // Show finished alert
-        let restartAction = UIAlertAction(title: "Restart", style: .default) { _ in
+        let restartAction = UIAlertAction(title: "🔁", style: .default) { _ in
             self.reset()
         }
-        let goBackAction = UIAlertAction(title: "Go back", style: .destructive) { _ in
+        let goBackAction = UIAlertAction(title: "🔙", style: .destructive) { _ in
             self.dismiss(animated: true, completion: nil)
         }
         showAlertWith(title: "🕛 Time's Up!!", message: ScoreManager.messageFor(score: score), actions: [goBackAction, restartAction])

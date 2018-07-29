@@ -39,5 +39,20 @@ class InfoHeaderView: UITableViewHeaderFooterView {
 
     func setTime(_ time: Double) {
         timerLabel.text = "\(time)"
+        if time == 5.0 {
+            blinkTimeLabel()
+        }
+        if time <= 0 {
+            timerLabel.layer.removeAllAnimations()
+            timerLabel.alpha = 1.0
+            timerLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+    }
+
+    func blinkTimeLabel() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.repeat, .curveEaseOut, .autoreverse], animations: {
+            self.timerLabel.alpha = 0.2
+            self.timerLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        }, completion: nil)
     }
 }
